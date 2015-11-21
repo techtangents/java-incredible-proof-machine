@@ -95,3 +95,7 @@ This is called Church Encoding.
 It's a way of encoding a closed sum type a.k.a. tagged union type.
 
 
+How do I know my answer's right?
+--------------------------------
+
+The theorem has been proven if you've followed The Rules and your code compiles. 
