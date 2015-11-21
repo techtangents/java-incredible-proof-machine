@@ -37,7 +37,7 @@ You are to use a "safe" subset of Java. This means:
 - No inheritance from classes - only interfaces
 - No variance annotations
 - No missing type parameters (unless inferred)
-- No non-final params, classes
+- No non-final params, classes, variables
 - No recursion
 
 But... I don't have lambda expressions
