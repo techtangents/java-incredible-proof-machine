@@ -43,7 +43,9 @@ You are to use a "safe" subset of Java. This means:
 But... I don't have lambda expressions
 --------------------------------------
 
-interface F<A, B> encodes a lambda expression 
+    interface F<A, B> 
+     
+encodes a lambda expression 
 using a single-function interface. 
 Use that. 
 
