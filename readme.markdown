@@ -20,9 +20,20 @@ into Java 6 methods. Implement the methods to prove the theorem.
 Why Java 6?
 -----------
 
-It's what I'm most familiar with. I think many programmers scoff at 
-Java's verbosity and denounce static typing, but it does have a reasonable
+Mostly because it's what I'm most familiar with. 
+
+I think many programmers scoff at Java's verbosity 
+and denounce static typing, but it does have a reasonable
 amount of expressive power and can prove theorems.
+
+But... I don't have lambda expressions
+--------------------------------------
+
+    interface F<A, B> 
+     
+encodes a lambda expression 
+using a single-function interface. 
+Use that. 
 
 The rules
 ---------
@@ -43,15 +54,6 @@ You are to use a "safe" subset of Java. This means:
 - No mocks or proxies
 - No for, while, goto, break, continue 
 - No side effects
-
-But... I don't have lambda expressions
---------------------------------------
-
-    interface F<A, B> 
-     
-encodes a lambda expression 
-using a single-function interface. 
-Use that. 
 
 What IDE should I use?
 ----------------------
