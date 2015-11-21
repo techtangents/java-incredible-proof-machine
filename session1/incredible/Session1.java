@@ -1,7 +1,7 @@
 package incredible;
 
 @SuppressWarnings({"unused", "NewExceptionWithoutArguments"})
-public class Session1 {
+public final class Session1 {
 
     private static UnsupportedOperationException todo() {
         return new UnsupportedOperationException();
