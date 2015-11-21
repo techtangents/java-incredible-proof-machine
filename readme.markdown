@@ -129,3 +129,9 @@ How do I know my answer's right?
 --------------------------------
 
 The theorem has been proven if you've followed The Rules and your code compiles. 
+
+Why can't Java's infer this type?
+---------------------------------
+
+Java's type inference isn't real flash. 
+You may need to put in explicit type parameters in some places.
