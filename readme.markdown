@@ -31,7 +31,7 @@ You are to use a "safe" subset of Java. This means:
 
 - No exceptions
 - No nulls
-- No equals(...), hashCode(...) or any other method on java.lang.Object
+- No equals, hashCode, clone or any other method on java.lang.Object
 - No var-args
 - No arrays
 - No inheritance from classes - only interfaces
