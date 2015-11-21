@@ -53,6 +53,11 @@ encodes a lambda expression
 using a single-function interface. 
 Use that. 
 
+What IDE should I use?
+----------------------
+
+The project is set up for IntelliJ, but use whatever you'd like.
+
 How does the correspondence work in Java?
 -----------------------------------------
 
