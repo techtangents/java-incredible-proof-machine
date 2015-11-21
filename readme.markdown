@@ -22,7 +22,7 @@ Why Java 6?
 
 It's what I'm most familiar with. I think many programmers scoff at 
 Java's verbosity and denounce static typing, but it does have a reasonable
-amount of expressive power.
+amount of expressive power and can prove theorems.
 
 The rules
 ---------
