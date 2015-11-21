@@ -1,15 +1,15 @@
 package incredible;
 
-public class Pair<A, B> {
-    public final A a;
-    public final B b;
+public final class Pair<X, Y> {
+    public final X x;
+    public final Y y;
 
-    private Pair(final A a, final B b) {
-        this.a = a;
-        this.b = b;
+    private Pair(final X x, final Y y) {
+        this.x = x;
+        this.y = y;
     }
 
-    public static <A, B> Pair<A, B> p(final A a, final B b) {
-        return new Pair<A, B>(a, b);
+    public static <X, Y> Pair<X, Y> p(final X x, final Y y) {
+        return new Pair<X, Y>(x, y);
     }
 }

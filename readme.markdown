@@ -52,11 +52,45 @@ How does the correspondence work in Java?
 
 The axioms are parameters to the function; the goal is the return type.
 
-Logical conjunction is a Pair (P)
-Logical disjuntion is an Either
-Logical implication is a Function (F) 
+    a ∧ b <==> Pair<A, B>
+    a ∨ b <==> Either<A, B>
+    a → b <==> F<A, B>
 
-a ∧ b <==> P<A, B>
-a ∨ b <==> Either<A, B>
-a → b <==> F<A, B>
+
+Where are my blocks?
+--------------------
+
+         +-----------------+
+     x  -|              ∧  |- x∧y   ===  Pair.p  
+     y  -|                 |
+         +-----------------+
+
+
+         +-----------------+
+    x∧y -| ∧               |- x     ===  Pair.x  
+         |                 |- y          Pair.y
+         +-----------------+
+
+
+         +---+         +---+
+         |   |- X   Y -| → |- x→y   ===  new F<X, Y>() {...}
+         |   |_________|   |
+         |                 |
+         |_________________|
+
+
+
+         +-----------------+
+    x→y -| →               |- y     ===  F.apply  
+      x -|                 |
+         +-----------------+
+
+
+
+What's with the "fold" in Either?
+---------------------------------
+
+This is called Church Encoding. 
+It's a way of encoding a closed sum type a.k.a. tagged union type.
+
 

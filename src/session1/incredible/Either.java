@@ -1,23 +1,23 @@
 package incredible;
 
-public abstract class Either<A, B> {
+public abstract class Either<X, Y> {
 
-    public abstract <T> T fold(final F<A, T> af, final F<B, T> bf);
+    public abstract <T> T fold(final F<X, T> af, final F<Y, T> bf);
 
-    public static <A, B> Either<A, B> a(final A a) {
-        return new Either<A, B>() {
+    public static <X, Y> Either<X, Y> a(final X x) {
+        return new Either<X, Y>() {
             @Override
-            public <T> T fold(final F<A, T> af, final F<B, T> bf) {
-                return af.apply(a);
+            public <T> T fold(final F<X, T> af, final F<Y, T> bf) {
+                return af.apply(x);
             }
         };
     }
 
-    public static <A, B> Either<A, B> b(final B b) {
-        return new Either<A, B>() {
+    public static <X, Y> Either<X, Y> b(final Y y) {
+        return new Either<X, Y>() {
             @Override
-            public <T> T fold(final F<A, T> af, final F<B, T> bf) {
-                return bf.apply(b);
+            public <T> T fold(final F<X, T> xf, final F<Y, T> yf) {
+                return yf.apply(y);
             }
         };
     }
