@@ -10,7 +10,6 @@ public class Session1 {
     private Session1() {
     }
 
-    // Session 1
     public static <A> A e1(final A a) {
         throw todo();
     }
