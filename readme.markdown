@@ -39,6 +39,10 @@ You are to use a "safe" subset of Java. This means:
 - No missing type parameters (unless inferred)
 - No non-final params, classes, variables
 - No recursion
+- No casting, instanceof, reflection
+- No mocks or proxies
+- No for, while, goto, break, continue 
+- No side effects
 
 But... I don't have lambda expressions
 --------------------------------------
@@ -63,29 +67,48 @@ Where are my blocks?
 --------------------
 
          +-----------------+
-     x  -|              ∧  |- x∧y   ===  Pair.p  
-     y  -|                 |
+     X  -|              ∧  |- X∧Y   ===  Pair.p  
+     Y  -|                 |
          +-----------------+
 
 
          +-----------------+
-    x∧y -| ∧               |- x     ===  Pair.x  
-         |                 |- y          Pair.y
+    X∧Y -| ∧               |- X     ===  Pair.x  
+         |                 |- Y          Pair.y
          +-----------------+
 
 
          +---+         +---+
-         |   |- X   Y -| → |- x→y   ===  new F<X, Y>() {...}
+         |   |- X   Y -| → |- X→Y   ===  new F<X, Y>() {...}
          |   |_________|   |
          |                 |
-         |_________________|
+         +-----------------+
 
 
          +-----------------+
-    x→y -| →               |- y     ===  F.apply  
-      x -|                 |
+    X→Y -| →               |- Y     ===  F.apply  
+      X -|                 |
          +-----------------+
 
+
+         +-----------------+
+      X -|            .∨   |- X∨Y     ===  Either.x  
+         |                 |
+         +-----------------+
+
+
+         +-----------------+
+      Y -|            ∨.   |- X∨Y     ===  Either.y  
+         |                 |
+         +-----------------+
+
+
+         +---+         +---+
+         |   |- X   P -|   |  
+    X∨Y -| ∨ +---------+   |- P       === Either.fold
+         |   +----------   |
+         |   |- Y   P -|   |
+         +---+         +---+
 
 
 What's with the "fold" in Either?
