@@ -11,7 +11,7 @@ is a fantastic way to learn about logical proofs,
 and a lot of fun. It's a great training exercise for programmers. 
 
 The Curry-Howard isomorphism states that proofs in a logic system correspond
-to types in a programming language. So, if you translate the theorem into types, 
+to programs in a programming language. So, if you translate the theorem into types, 
 if you can inhabit this type, then you've proven the theorem.
 
 This repository translates all of the theorems in the Incredible Proof Machine
