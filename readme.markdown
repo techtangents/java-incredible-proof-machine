@@ -25,7 +25,7 @@ Mostly because it's what I'm most familiar with.
 I also want to show that, despite Java's limitations, it does
 have a reasonable static type system, which can be used to prove theorems.
 
-More importantly - even Java's limited type system can prove properties
+More importantly, you can use Java's type system to prove properties
 of your own programs and prevent bugs. 
 Every Java programmer should remember this.
 
@@ -142,7 +142,6 @@ What's with the "fold" in Either?
 This is called Church Encoding. 
 It's a way of encoding a closed sum type a.k.a. tagged union type.
 
-
 How do I know my answer's right?
 --------------------------------
 
@@ -167,5 +166,5 @@ Where are sessions 6 and 7?
 
 Sessions 6 and 7 use universal and existential quantifiers (∀ and ∃), 
 which correspond to Π and Σ types in a dependently-typed programming
-language. 
+language. Sadly, Java is not dependently-typed.
 
