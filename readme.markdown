@@ -1,4 +1,4 @@
-By the power of the Curry-Howard Isomorphism... presenting:
+The Curry-Howard Isomorphism presents:
 
 The Incredible Proof Machine... translated to Java 6
 ====================================================
@@ -11,20 +11,23 @@ is a fantastic way to learn about logical proofs,
 and a lot of fun. It's a great training exercise for programmers. 
 
 The Curry-Howard isomorphism states that proofs in a logic system correspond
-to programs in a programming language. So, if you translate the theorem into types, 
+to programs in a programming language. So, if you translate a theorem into types, 
 if you can inhabit this type, then you've proven the theorem.
 
-This repository translates all of the theorems in the Incredible Proof Machine
-into Java 6 methods. Implement the methods to prove the theorem.
+This repository translates most of the theorems in the Incredible Proof Machine
+into Java 6 methods. Your task is to implement the methods in order to prove the theorem.
 
 Why Java 6?
 -----------
 
 Mostly because it's what I'm most familiar with. 
 
-I think many programmers scoff at Java's verbosity 
-and denounce static typing, but it does have a reasonable
-amount of expressive power and can prove theorems.
+I also want to show that, despite Java's limitations, it does
+have a reasonable static type system, which can be used to prove theorems.
+
+More importantly - even Java's limited type system can prove properties
+of your own programs and prevent bugs. 
+Every Java programmer should remember this.
 
 But... I don't have lambda expressions
 --------------------------------------
@@ -34,6 +37,9 @@ But... I don't have lambda expressions
 encodes a lambda expression 
 using a single-function interface. 
 Use that. 
+
+If you want to convert the exercises to Java 8 to use lambdas, feel free. 
+I'd love to have a Java 8 branch or fork.
 
 The rules
 ---------
@@ -67,8 +73,9 @@ The axioms are parameters to the function; the goal is the return type.
 
     a ∧ b <==> Pair<A, B>
     a ∨ b <==> Either<A, B>
-    a → b <==> F<A, B>
-
+    a → b <==> F<A, B> (i.e. a function)
+    ⊥     <==> java.lang.Void (a type with no values)
+    
 
 Where are my blocks?
 --------------------
@@ -99,23 +106,34 @@ Where are my blocks?
 
 
          +-----------------+
-      X -|            .∨   |- X∨Y     ===  Either.x  
+      X -|            .∨   |- X∨Y     ===  Either.<X,Y>x  
          |                 |
          +-----------------+
 
 
          +-----------------+
-      Y -|            ∨.   |- X∨Y     ===  Either.y  
+      Y -|            ∨.   |- X∨Y     ===  Either.<X,Y>y  
          |                 |
          +-----------------+
 
 
          +---+         +---+
          |   |- X   P -|   |  
-    X∨Y -| ∨ +---------+   |- P       === Either.fold
+    X∨Y -| ∨ +---------+   |- P       === Either.<P>fold
          |   +----------   |
          |   |- Y   P -|   |
          +---+         +---+
+
+
+         +-----------------+
+      ⊥ -|  ⊥              |- P       ===  V.<P>absurd(Void)  
+         +-----------------+
+
+
+         +-----------------+
+         |      TND        |- P∨(P→⊥) ===  TND.<P>tnd()
+         +-----------------+
+
 
 
 What's with the "fold" in Either?
@@ -135,3 +153,19 @@ Why can't Java's infer this type?
 
 Java's type inference isn't real flash. 
 You may need to put in explicit type parameters in some places.
+
+Why do some of the axioms throw exceptions?
+-------------------------------------------
+
+While the types in these exercises are all expressible in Java, 
+some of the values of these types are not. It doesn't matter, however - 
+your job is to assume the axioms are true and construct proofs based on them.
+So long as you don't use exceptions in your proofs.
+
+Where are sessions 6 and 7?
+---------------------------
+
+Sessions 6 and 7 use universal and existential quantifiers (∀ and ∃), 
+which correspond to Π and Σ types in a dependently-typed programming
+language. 
+
