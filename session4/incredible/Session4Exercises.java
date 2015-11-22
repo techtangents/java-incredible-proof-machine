@@ -1,13 +1,12 @@
 package incredible;
 
-@SuppressWarnings({"unused", "NewExceptionWithoutArguments"})
-public final class Session4 {
+public final class Session4Exercises {
 
     private static UnsupportedOperationException todo() {
         return new UnsupportedOperationException();
     }
 
-    private Session4() {
+    private Session4Exercises() {
     }
 
     // TIP: Use V.<A>absurd(v) to convert Void to any other type
@@ -40,11 +39,11 @@ public final class Session4 {
         throw todo();
     }
 
-    public static <A, B> F<F<B, Void>, F<A, Void>> e7(final F<A, B> f) {
+    public static <A, B> Pair<F<A, Void>, F<B, Void>> e8(final F<Either<A, B>, Void> f) {
         throw todo();
     }
 
-    public static <A, B> Pair<F<A, Void>, F<B, Void>> e8(final F<Either<A, B>, Void> f) {
+    public static <A, B> F<F<B, Void>, F<A, Void>> e7(final F<A, B> f) {
         throw todo();
     }
 

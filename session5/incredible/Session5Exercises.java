@@ -1,13 +1,12 @@
 package incredible;
 
-@SuppressWarnings({"unused", "NewExceptionWithoutArguments"})
-public final class Session5 {
+public final class Session5Exercises {
 
     private static UnsupportedOperationException todo() {
         return new UnsupportedOperationException();
     }
 
-    private Session5() {
+    private Session5Exercises() {
     }
 
     // TIP: Use V.<A>absurd(v) to convert Void to any other type

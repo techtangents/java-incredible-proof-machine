@@ -1,13 +1,12 @@
 package incredible;
 
-@SuppressWarnings({"unused", "NewExceptionWithoutArguments"})
-public final class Session3 {
+public final class Session3Exercises {
 
     private static UnsupportedOperationException todo() {
         return new UnsupportedOperationException();
     }
 
-    private Session3() {
+    private Session3Exercises() {
     }
 
     public static <A, B> Either<A, B> e1(final A a, final B b) {
