@@ -1,9 +1,9 @@
 package incredible;
 
 @SuppressWarnings({"unused", "NewExceptionWithoutArguments"})
-public final class Hilbert {
+public final class NandExercises {
 
-    private Hilbert() {
+    private NandExercises() {
     }
 
     private static UnsupportedOperationException todo() {
