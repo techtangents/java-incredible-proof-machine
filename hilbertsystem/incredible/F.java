@@ -1,5 +1,7 @@
 package incredible;
 
-public interface F<X, Y> {
-    Y apply(X x);
+public final class F<X, Y> {
+    public Y apply(final X x) {
+        throw new Error("Just use the types");
+    }
 }
