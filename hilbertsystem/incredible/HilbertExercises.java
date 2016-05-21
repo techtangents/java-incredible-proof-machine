@@ -9,6 +9,8 @@ public final class HilbertExercises {
         return new UnsupportedOperationException();
     }
 
+    // Note: you aren't allowed to do 'new F<>'
+
     public static <A> F<A, A> e1() {
         throw todo();
     }
